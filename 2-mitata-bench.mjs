@@ -3,12 +3,16 @@ import arrayLikeObject from './approaches/array-like-object.mjs'
 import nullMutations from './approaches/null-mutations.mjs'
 import nullMutationsNoDelete from './approaches/null-mutations-no-delete.mjs'
 import oldArray from './approaches/old-array.mjs'
+import nullMutationsNoAsyncAwait from './approaches/null-mutations-no-async-await.mjs'
+import nullMutationsNoAwait from './approaches/null-mutations-no-await.mjs'
 
 const thenables = [
   arrayLikeObject,
   nullMutations,
   nullMutationsNoDelete,
-  oldArray
+  oldArray,
+  nullMutationsNoAsyncAwait,
+  nullMutationsNoAwait
 ]
 
 group('all together', () => {
