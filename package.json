@@ -1,0 +1,16 @@
+{
+  "name": "awaitable-array",
+  "version": "1.0.0",
+  "description": "Make await array behavior similar to Promise.all",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Maksym Shenderuk <jaood96@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "mitata": "^0.1.11",
+    "tinybench": "^2.8.0"
+  }
+}
