@@ -4,7 +4,9 @@
   "description": "Make await array behavior similar to Promise.all",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bench": "npm run bench:tinybench && npm run bench:mitata",
+    "bench:tinybench": "node 1-tinybench-bench.mjs",
+    "bench:mitata": "node 2-mitata-bench.mjs"
   },
   "keywords": [],
   "author": "Maksym Shenderuk <jaood96@gmail.com>",
