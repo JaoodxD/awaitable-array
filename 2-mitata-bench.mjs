@@ -1,4 +1,4 @@
-import { run, bench, group } from 'mitata'
+import { run, bench, group,baseline } from 'mitata'
 import arrayLikeObject from './approaches/array-like-object.mjs'
 import nullMutations from './approaches/null-mutations.mjs'
 import nullMutationsNoDelete from './approaches/null-mutations-no-delete.mjs'
@@ -16,6 +16,9 @@ const thenables = [
 ]
 
 group('all together', () => {
+  baseline('Promise.all', async () => {
+    const [a, b] = await Promise.all([Promise.resolve(1), Promise.resolve(2)])
+  })
   for (const thenable of thenables) {
     bench(thenable.name, async () => {
       Array.prototype.then = thenable
