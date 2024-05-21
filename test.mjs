@@ -21,7 +21,7 @@ for (const thenable of thenables) {
       const wait = (ms, value) =>
         new Promise(res => setTimeout(() => res(value), ms))
 
-      const [a, b] = await [wait(500, 1), wait(100, 2)]
+      const [a, b] = await [wait(100, 1), wait(10, 2)]
       equal(a, 1)
       equal(b, 2)
     }
