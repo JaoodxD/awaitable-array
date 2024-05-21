@@ -1,21 +1,9 @@
 import { Bench } from 'tinybench'
-import arrayLikeObject from './approaches/array-like-object.mjs'
-import nullMutations from './approaches/null-mutations.mjs'
-import nullMutationsNoDelete from './approaches/null-mutations-no-delete.mjs'
-import oldArray from './approaches/old-array.mjs'
-import nullMutationsNoAsyncAwait from './approaches/null-mutations-no-async-await.mjs'
-import nullMutationsNoAwait from './approaches/null-mutations-no-await.mjs'
+import loadThenables from './loader.mjs'
 
 const bench = new Bench()
 
-const thenables = [
-  arrayLikeObject,
-  nullMutations,
-  nullMutationsNoDelete,
-  oldArray,
-  nullMutationsNoAsyncAwait,
-  nullMutationsNoAwait
-]
+const thenables = await loadThenables()
 
 bench.add('Promise.all', async () => {
   const [a, b] = await Promise.all([Promise.resolve(1), Promise.resolve(2)])

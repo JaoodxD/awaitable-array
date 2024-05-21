@@ -1,22 +1,8 @@
 import { run, bench, group, baseline } from 'mitata'
 import { strictEqual } from 'node:assert'
-import arrayLikeObject from './approaches/array-like-object.mjs'
-import nullMutations from './approaches/null-mutations.mjs'
-import nullMutationsNoDelete from './approaches/null-mutations-no-delete.mjs'
-import oldArray from './approaches/old-array.mjs'
-import nullMutationsNoAsyncAwait from './approaches/null-mutations-no-async-await.mjs'
-import nullMutationsNoAwait from './approaches/null-mutations-no-await.mjs'
-import nullNoAwait from './approaches/null-no-await.mjs'
+import loadThenables from './loader.mjs'
 
-const thenables = [
-  arrayLikeObject,
-  nullMutations,
-  nullMutationsNoDelete,
-  oldArray,
-  nullMutationsNoAsyncAwait,
-  nullMutationsNoAwait,
-  nullNoAwait
-]
+const thenables = await loadThenables()
 
 group('all together', () => {
   baseline('Promise.all', async () => {
