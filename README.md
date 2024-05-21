@@ -17,7 +17,7 @@ To add new approach to be tested and benchmarked, it should fulfil following req
 - default exported
 - be in separate file inside [approahces](./approaches/) directory
 
-If necessary function could also by async.
+If necessary function could also by async.  
 Approach will automaticaly be assigned to `Array.prototype.then` during tests.
 
 Here is an example of correctly disgned approach:
