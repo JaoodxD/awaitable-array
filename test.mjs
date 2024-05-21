@@ -30,7 +30,7 @@ for (const thenable of thenables) {
 }
 
 for (const thenable of thenables) {
-  await test(`order ${thenable.name}`, async () => {
+  await test(`complex ${thenable.name}`, async () => {
     Array.prototype.then = thenable
 
     let expect = 4
