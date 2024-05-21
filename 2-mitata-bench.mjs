@@ -12,6 +12,7 @@ group('all together', () => {
   })
   for (const thenable of thenables) {
     bench(thenable.name, async () => {
+      // eslint-disable-next-line
       Array.prototype.then = thenable
 
       const [a, b] = await [Promise.resolve(1), Promise.resolve(2)]

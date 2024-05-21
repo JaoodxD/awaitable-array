@@ -1,7 +1,7 @@
 export default async function arrayLikeObject (resolve) {
   const result = {
     length: 0,
-    *[Symbol.iterator] () {
+    * [Symbol.iterator] () {
       for (let i = 0; i < this.length; i++) yield this[i]
     }
   }
