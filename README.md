@@ -13,7 +13,7 @@ console.log(a, b) // should print 1, 2
 To add new approach to be tested and benchmarked, it should fulfil following requirements:  
 - Should be a `thenable` function
 - Ecmascript module syntax
-- named function
+- named function (will be used in tests and benchmarks as label)
 - default exported
 - be in separate file inside [approahces](./approaches/) directory
 
